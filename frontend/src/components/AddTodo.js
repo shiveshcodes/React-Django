@@ -4,6 +4,7 @@ import styles from './styles/AddTodo.module.css'
 import { useState } from 'react'
 import axios from 'axios'
 import jwt from 'jwt-decode'
+import {MentionsInput, Mention} from 'react-mentions'
 export default function AddTodo() {
   const user = jwt(localStorage.getItem('access_token'))['user_id']
 
@@ -39,6 +40,13 @@ const submit =(e) => {
   
 }
 
+const users = [
+  { id: '1', display: '@Oli Smith' }, 
+  { id: '2', display: '@Janet Williams' },
+  { id: '3', display: '@Peter Jones' },
+  { id: '4', display: '@Bill Rogers' },
+]
+
 
 
   return (
@@ -49,7 +57,19 @@ const submit =(e) => {
         </div>
         <div>
         <label  className={styles.label}>Description</label>
-        <textarea name="desciption" onChange={updateDescription} className={loginstyles.inputBox} placeholder="Description" />
+        <MentionsInput value={Post.description} className={loginstyles.inputBox}  onChange={updateDescription}>
+  <Mention
+    trigger="@"
+    data={users}
+    
+  />
+  <Mention
+    trigger="#"
+    data={users}
+    
+  />
+</MentionsInput>
+        {/* <textarea name="desciption" onChange={updateDescription} className={loginstyles.inputBox} placeholder="Description" /> */}
         </div>
         <button className={loginstyles.inputBox} type="submit">Add Todo</button>
     </form>

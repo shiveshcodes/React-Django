@@ -34,7 +34,6 @@ class TodoView(APIView):
         serializer = TodoSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(owner = request.user)
-            send_push_notification(request)
             return Response(serializer.data, status.HTTP_201_CREATED)
         return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
     
