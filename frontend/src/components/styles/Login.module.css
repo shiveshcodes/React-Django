@@ -1,0 +1,46 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.error{
+    color: red;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+.hide{
+    display: none;
+}
+
+.inputBox{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.myButton{
+    padding: 10px 20px;
+    background-color:#865DFF;
+    color: white;
+    border: 1px solid black;
+  }
+  
+
+@media screen and (max-width: 768px){
+    .login{
+        width: 100%;
+    }
+}
+    

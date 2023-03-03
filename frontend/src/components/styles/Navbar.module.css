@@ -1,0 +1,33 @@
+.navbar{
+    height: 80px;
+    display: flex;
+    justify-content: space-AROUND;
+    align-items: center;
+    width: 100vw;
+    background-color: #865DFF;
+    color: white;
+}
+
+.navlogo{
+    width: 20%;
+    padding: 1em;
+   
+}
+
+.navopt{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em;
+}
+
+.navelement{
+    text-decoration: none;
+    color: white;  
+}
+
+.navelement:hover{
+    color: YELLOW;
+    text-decoration: none;
+}
